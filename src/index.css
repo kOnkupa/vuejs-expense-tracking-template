@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.apexcharts-text.apexcharts-yaxis-label, .apexcharts-text.apexcharts-xaxis-label  {
+  @apply fill-current;
+}
+.apexcharts-tooltip {
+  @apply text-base-content;
+}
+/* Scrollbar */
+/* Width*/
+nav::-webkit-scrollbar-thumb {
+  display: none;
+}
+::-webkit-scrollbar {
+  width: 10px;
+  height: 16px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+  border-radius: 100vh;
+  @apply bg-transparent;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-500 border-4 border-solid border-transparent border-4 w-2 rounded-box;
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #a0aec0;
+}
