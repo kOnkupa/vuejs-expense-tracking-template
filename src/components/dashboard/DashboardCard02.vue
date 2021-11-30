@@ -42,7 +42,6 @@ export default defineComponent({
         amount: faker.finance.amount(),
       }))
     )
-    console.log(dayjs().unix())
     return {
       randomDataTable,
     }

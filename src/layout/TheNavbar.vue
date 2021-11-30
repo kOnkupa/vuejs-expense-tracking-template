@@ -1,7 +1,9 @@
 <template>
   <div class="navbar border-b shadow sm:hidden">
     <div class="navbar-start">
-      <menu-alt1-icon class="h-8 w-8" @click="open = true" />
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" viewBox="0 0 20 20" fill="currentColor" @click="open = true">
+        <path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h6a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd" />
+      </svg>
     </div>
     <div class="navbar-center">
       <p class="text-lg font-bold font-mono">Fancy Logo</p>
@@ -14,7 +16,6 @@
 </template>
 
 <script lang="ts">
-import { MenuAlt1Icon } from '@heroicons/vue/solid'
 import { defineComponent, ref } from 'vue'
 
 import AddItemDropdown from '../components/partials/AddItemDropdown.vue'
@@ -22,7 +23,7 @@ import TheNavbarSlide from './TheNavbarSlide.vue'
 
 export default defineComponent({
   name: 'TheNavbar',
-  components: { TheNavbarSlide, AddItemDropdown, MenuAlt1Icon },
+  components: { TheNavbarSlide, AddItemDropdown },
   setup() {
     const open = ref<boolean>(false)
     const onClose = () => open.value = false

@@ -2,10 +2,14 @@
   <section class="relative">
     <div class="p-2 rounded-box space-y-5 bg-primary h-full relative shadow-md text-white">
       <p class="text-xl font-bold px-4 pb-4">Expense</p>
-      <the-sidebar-link v-for="(navigation, key) in navigations" :key="key" :label="navigation.title" :icon="navigation.icon" />
+      <the-sidebar-link v-for="(navigation, key) in navigations" :key="key" :label="navigation.title">
+        <template #icon>
+          <component :is="navigation.icon" class="fill-current h-7 w-7" />
+        </template>
+      </the-sidebar-link>
       <div class="flex absolute bottom-2 w-full pr-4">
         <button class="w-full flex btn btn-error rounded-box">
-          <component :is="logout.icon" class="fill-current h-7 w-7" />
+          <logout-icon class="fill-current h-7 w-7" />
           <span class="ml-2">{{ logout.title }}</span>
         </button>
       </div>
@@ -42,7 +46,7 @@ const logout = {
 }
 export default defineComponent({
   name: 'TheSidebar',
-  components: { TheSidebarLink },
+  components: { LogoutIcon, TheSidebarLink },
   setup() {
     return {
       navigations,

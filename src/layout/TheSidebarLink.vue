@@ -1,6 +1,6 @@
 <template>
   <div class="flex items-center cursor-pointer py-2 px-4 rounded-box hover:bg-primary-focus">
-    <component :is="icon" class="fill-current h-7 w-7" />
+    <slot name="icon" />
     <p class="ml-2">{{ label }}</p>
   </div>
 </template>
@@ -14,11 +14,7 @@ export default defineComponent({
     label: {
       type: String,
       required: true,
-    },
-    icon: {
-      type: String,
-      required: true,
-    },
+    }
   },
 })
 </script>
